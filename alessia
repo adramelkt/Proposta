@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Per Te, Alessia ❤️</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background-color: #ffccdd;
+            color: #333;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            max-width: 400px;
+        }
+        h1 {
+            color: #ff3366;
+        }
+        .heart {
+            font-size: 50px;
+            animation: heartbeat 1.5s infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 15px 25px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .yes {
+            background-color: #ff3366;
+            color: white;
+        }
+        .yes:hover {
+            transform: scale(1.1);
+        }
+        .no {
+            background-color: #ccc;
+            color: white;
+            position: absolute;
+        }
+        .no:hover {
+            transform: translateX(50px);
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const noButton = document.querySelector('.no');
+            noButton.addEventListener('mouseover', (event) => {
+                const container = document.querySelector('.container');
+                const rect = container.getBoundingClientRect();
+                const maxX = rect.width - noButton.offsetWidth;
+                const maxY = rect.height - noButton.offsetHeight;
+                const randomX = Math.floor(Math.random() * maxX);
+                const randomY = Math.floor(Math.random() * maxY);
+                noButton.style.transform = `translate(${randomX}px, ${randomY}px)`;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Alessia, vuoi essere la mia ragazza? ❤️</h1>
+        <div class="heart">💖</div>
+        <div class="buttons">
+            <button class="yes" onclick="alert('Sapevo che avresti detto di sì! Ti amo! ❤️')">Sì</button>
+            <button class="no" onclick="alert('Ma sei sicura? Dai, ripensaci! 😢')">No</button>
+        </div>
+    </div>
+</body>
+</html>
